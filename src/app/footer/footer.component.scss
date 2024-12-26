@@ -1,0 +1,25 @@
+
+*{
+    background-color: gray;
+}
+footer {
+    background-color: gainsboro;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    
+    
+  }
+  footer p {
+    margin: 5px;
+  }
+
+  .spaceBetween{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+  }
+

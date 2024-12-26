@@ -1,0 +1,69 @@
+::ng-deep body {
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        place-items: center;
+        overflow: hidden;
+       //font-family: poppins;
+        background-image: url("../../assets/bg.jpg");
+        //mask-repeat: no-repeat;
+       // background-repeat: no-repeat;
+        background-size: 100% 100%;
+}
+
+.formdata {
+        background-color: #f50451;
+        border-radius: 10px;
+        
+        padding: 10px;
+        margin-top: 185px;
+        margin-left: 10px;
+        width:28%;
+}
+
+.spacebetween {
+        display: flex;
+        justify-content: space-around;
+}
+
+
+img {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 150px;
+}
+
+img:hover {
+        box-shadow: 0 0 4px 2px rgba(0, 140, 186, 0.5);
+}
+
+section {
+        display: table;
+      }
+      
+.button-row {
+        display: table-cell;
+        max-width: 600px;
+      }
+
+      .button-row .mat-mdc-button-base {
+        margin: 8px 8px 8px 0;
+      }
+      
+.flex-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      
+.button-container {
+        display: flex;
+        justify-content: center;
+        width: 140px;
+      }
+
+.password_label{
+        color: black;
+}

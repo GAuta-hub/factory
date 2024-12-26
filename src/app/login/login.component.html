@@ -1,0 +1,40 @@
+
+<div style="position: left; padding-left: 20px;">
+  <div >
+    <h1>Nirmal Bricks</h1>
+  </div>
+  
+</div>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="formdata">
+
+  <mat-form-field appearance="outline">
+    <mat-label>User Name</mat-label>
+    <input matInput id="username" formControlName="username" placeholder="username">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="Password_label">
+    <mat-label>Password</mat-label>
+   
+    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+      <button mat-icon-button matSuffix (click)="hide = !hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+  </mat-form-field>
+ 
+  <div class="button-row">
+    <div class="flex-container">
+      <div class="button-container">
+  <button >Login</button>
+ 
+  
+  </div>
+  </div>
+  </div>
+</form>
+<button routerLink="">Sign Up</button>
+
+<app-footer></app-footer>
+
+

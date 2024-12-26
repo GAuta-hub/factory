@@ -1,0 +1,28 @@
+<div class="modal-overlay">
+    <div class="modal-content">
+      <h2>Register here</h2>
+      <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
+        
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" ngModel required>
+  
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" ngModel required>
+
+        <label for="reenter_password">Reenter Password:</label>
+        <input type="reenter_password" id="reenter_password" name="reenter_password" ngModel required>
+
+        <label for="address">Address:</label>
+        <input type="address" id="address" name="address" ngModel required>
+
+        <label for="phone_Number">Phone Number:</label>
+        <input type="phone_Number" id="phone_Number" name="phone_Number" ngModel required>
+      
+        <button type="submit" [disabled]="!userForm.valid">Submit</button>
+       
+      </form>
+      <button (click)="close.emit()">Close</button>
+    </div>
+  </div>
+  

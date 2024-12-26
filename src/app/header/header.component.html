@@ -1,0 +1,53 @@
+ <!-- <div><img src="logo.JPG" alt="Home"  usemap="#logomap"> 
+  <map name="logomap">
+      <area shape="default" alt="Home" href="/login">
+    </map>
+</div> -->
+
+ <nav>
+  <ul id='menu'>
+    <div class="spaceBetween">
+    <div>
+    <li> <a routerLink="/login">Home</a></li>
+    <li> <a routerLink="/customer-bill">Customer Bill</a></li>
+    <li> <a routerLink="/inventory">inventory</a></li>
+    <li> <a routerLink="/raw-materials">Raw Materials</a></li>
+    <li><a class='prett'>Employee</a>
+      <ul class='menus'>
+       <a routerLink="/employee-salary">Employee Salary</a>
+       <a routerLink="/employee-details">Employee Details</a>        
+      </ul>
+    </li>
+    <li><a class='prett'>About us</a>
+      <ul class='menus'>
+        <li><a routerLink="/our-mission">Our Mission</a></li>
+        <li><a routerLink="/our-community">Our Community</a></li>      
+      </ul>
+    </li>
+    <li> <a routerLink="/careers">Careers</a></li>
+  </div>
+<div>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="user">
+      <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voice mail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu> 
+  </div>
+</div>
+  </ul>
+</nav>
+
+
+

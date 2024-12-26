@@ -1,0 +1,47 @@
+<div mat-dialog-content>
+
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form-container">
+        <h2>Add New Member</h2>
+        <div class="spaceBetween">
+            <div class="form-group">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Customer Name</mat-label>
+                    <input matInput id="customer_name" formControlName="customer_name" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Customer Address</mat-label>
+                    <input matInput id="customer_address" formControlName="customer_address" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Customer Phone Number</mat-label>
+                    <input matInput id="customer_phone_number" formControlName="customer_phone_number" maxlength="10"/>
+                </mat-form-field>
+
+
+                <!-- <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Date of order</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="date" />
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field> -->
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Quantity</mat-label>
+                    <input matInput id="quantity" [(ngModel)]="quantity" formControlName="quantity" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Rate</mat-label>
+                    <input matInput id="rate" [(ngModel)]="rate" formControlName="rate" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Total Amount</mat-label>
+                    <input matInput id="total_amount" formControlName="total_amount" [value]="rate*quantity" />
+                </mat-form-field>
+<Button>submit</Button>
+            </div>
+
+            
