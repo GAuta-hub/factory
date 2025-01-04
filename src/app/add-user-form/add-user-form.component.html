@@ -1,28 +1,61 @@
-<div class="modal-overlay">
-    <div class="modal-content">
-      <h2>Register here</h2>
-      <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
-        
-        
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" ngModel required>
-  
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" ngModel required>
 
-        <label for="reenter_password">Reenter Password:</label>
-        <input type="reenter_password" id="reenter_password" name="reenter_password" ngModel required>
+  <div class="card">
+    <mat-card appearance="outlined">
+        <mat-card-title>Add User Details</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="signUpForm">
 
-        <label for="address">Address:</label>
-        <input type="address" id="address" name="address" ngModel required>
+                <div class="split left">
+                    <div> <mat-form-field appearance="outline">
+                            <mat-label>User Name</mat-label>
+                            <input matInput placeholder="UserName" formControlName="user_name">
+                        </mat-form-field>
+                    </div>
+                  
+                  </div>
+                  <div class="split right">
+                      <div> <mat-form-field appearance="outline">
+                              <mat-label>Password</mat-label>
+                              <input matInput placeholder="Password" formControlName="password">
+                          </mat-form-field>
+                      </div>
 
-        <label for="phone_Number">Phone Number:</label>
-        <input type="phone_Number" id="phone_Number" name="phone_Number" ngModel required>
-      
-        <button type="submit" [disabled]="!userForm.valid">Submit</button>
-       
-      </form>
-      <button (click)="close.emit()">Close</button>
-    </div>
-  </div>
-  
+                      <div> <mat-form-field appearance="outline">
+                        <mat-label>Re Enter Password</mat-label>
+                        <input matInput placeholder="Re Enter Password" formControlName="reentter_password">
+                    </mat-form-field>
+                </div>
+
+                    <div> <mat-form-field appearance="outline">
+                            <mat-label>Address</mat-label>
+                            <input matInput placeholder="Address" formControlName="address">
+                        </mat-form-field>
+                    </div>
+
+                    <div> <mat-form-field appearance="outline">
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput placeholder="Phone Number" formControlName="phone_number">
+                        </mat-form-field>
+                    </div>
+                
+                    <mat-form-field appearance="outline">
+                        <mat-label>Roles</mat-label>
+                        <mat-select formControlName="role" >
+                          <mat-option  *ngFor="let option of options" [value]="option.value" >
+                            {{ option.label }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+
+
+                <section>
+                    <div >
+                        <button  mat-flat-button (click)="addUser(signUpForm)" [disabled]="!signUpForm.valid">Add User</button>
+                        <button mat-flat-button (click)="close()">Close</button>
+                    </div>
+                </section>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

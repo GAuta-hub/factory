@@ -1,40 +1,59 @@
-
 <div style="position: left; padding-left: 20px;">
-  <div >
+  <div>
     <h1>Nirmal Bricks</h1>
   </div>
-  
+
 </div>
 
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="formdata">
 
-  <mat-form-field appearance="outline">
-    <mat-label>User Name</mat-label>
-    <input matInput id="username" formControlName="username" placeholder="username">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-  </mat-form-field>
 
-  <mat-form-field appearance="outline" class="Password_label">
-    <mat-label>Password</mat-label>
-   
-    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
-      <button mat-icon-button matSuffix (click)="hide = !hide">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </button>
-  </mat-form-field>
- 
-  <div class="button-row">
-    <div class="flex-container">
-      <div class="button-container">
-  <button >Login</button>
- 
-  
+
+
+
+
+<div class="spacebetween">
+  <div>
+    <div class="card">
+      <mat-card appearance="outlined">
+        <mat-card-content>
+          <form [formGroup]="loginForm">
+              <h2>Login</h2>
+              <div>
+                <mat-form-field appearance="outline">
+                <mat-label>User Name</mat-label>
+                <input matInput id="username" formControlName="username" placeholder="username">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="outline" class="Password_label">
+                <mat-label>Password</mat-label>
+                <input matInput [type]="hide()? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="clickEvent($event)"
+                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide()">
+                  <mat-icon  class="button">{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <strong style="color: red;">{{alertMessage}}</strong>
+            <section>
+              <div class="button-row">
+                <button mat-flat-button (click)="onSubmit()" [disabled]="!loginForm.valid">Login</button>
+              </div>
+            </section>
+             
+                <div class="spacebetween">
+                  <a (click)="onForgot()"><u>Forgot Password?</u></a><br>
+                  <a (click)="onSignup()"><u>Sign Up</u></a>
+                </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
-  </div>
-  </div>
-</form>
-<button routerLink="">Sign Up</button>
+
+</div>
+
+
 
 <app-footer></app-footer>
-
-
