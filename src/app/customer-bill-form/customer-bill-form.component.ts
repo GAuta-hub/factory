@@ -1,8 +1,9 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CustomerService } from '../customer.service';
+
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { CustomerService } from '../service/customer.service';
 @Component({
   selector: 'app-customer-bill-form',
   imports: [ReactiveFormsModule, MatInputModule, MatDatepickerModule],

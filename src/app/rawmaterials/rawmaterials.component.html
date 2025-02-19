@@ -1,5 +1,29 @@
 
 <app-header></app-header>
-<h1>raw materials</h1>
+
+<div style="display: flex; justify-content: space-between;">
+    <div><button mat-raised-button (click)="additems()">Add</button>
+        <button mat-raised-button (click)="deleteitem($event)">Delete</button>
+    </div>
+    <div>
+        <button mat-raised-button (click)="exptortdatatoexel()">Export</button>
+        <button mat-raised-button>Import</button>
+    </div>
+
+</div>
+<ag-grid-angular 
+#agGrid
+[modules]="modules"
+style="height: 80%;"  
+(gridReady)="onGridReady($event)"
+
+[rowSelection]="rowSelection"
+[rowData]="rowData" 
+[columnDefs]="columnDefs"
+
+  
+>
+
+</ag-grid-angular>
 
 <app-footer></app-footer>

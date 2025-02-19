@@ -1,5 +1,27 @@
-
 <app-header></app-header>
-<h1>employee salary</h1>
+<div style="display: flex; justify-content: space-between;">
+    <div><button mat-raised-button (click)="additems()">Add</button>
+        <button mat-raised-button (click)="deleteitem($event)">Delete</button>
+    </div>
+    <div>
+        <button mat-raised-button (click)="exptortdatatoexel()">Export</button>
+        <button mat-raised-button>Import</button>
+    </div>
+</div>
+
+<ag-grid-angular 
+style="height: 730px; "
+
+[modules]="modules" 
+[rowSelection]="rowSelection" 
+[rowData]="rowData" 
+[columnDefs]="colDefs"
+[defaultColDef]="defaultColDef"
+(gridReady)="onGridReady($event)" 
+>
+
+</ag-grid-angular>
+
+
 
 <app-footer></app-footer>

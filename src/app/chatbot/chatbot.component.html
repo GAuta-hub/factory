@@ -1,0 +1,30 @@
+
+
+
+  <div class="chatbot-container">
+    <div class="chatbot-header">
+      <h3>Enquiry Chatbot</h3>
+    </div>
+    <div class="chatbot-messages">
+      <div *ngFor="let response of response" [class.user]="response.sender === 'user'" class="response">
+        {{ response.text }}
+      </div>
+    </div>
+    <div class="chatbot-input">
+      <input [(ngModel)]="userInput" placeholder="Type your enquiry..." (keyup.enter)="sendMessage()" />
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+
+
+<!--   
+  <div>
+    <h2>Enquiry Form</h2>
+    <input [(ngModel)]="userQuery" placeholder="Enter your query">
+    <button (click)="onSubmit()">Submit</button>
+  </div>
+  
+  <div *ngIf="response">
+    <h3>Response:</h3>
+    <p>{{ response }}</p>
+  </div> -->

@@ -11,11 +11,14 @@ import { CareersComponent } from './careers/careers.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { OurMissionComponent } from './our-mission/our-mission.component';
 import { OurCommunityComponent } from './our-community/our-community.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
+
+
 
 
 
 export const routes: Routes = [
-  
+ {path: 'chatbot', component:ChatbotComponent},
   { path: 'our-community', component: OurCommunityComponent},
   { path: 'our-mission', component: OurMissionComponent},
   { path: 'customer-bill', component: CustomerBillComponent},
