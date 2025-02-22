@@ -11,6 +11,7 @@ export class ChatbotService {
     const lowerCaseQuery = query.toLowerCase();
 
     // Define rules and corresponding responses
+
     if (lowerCaseQuery.includes('hello') || lowerCaseQuery.includes('hi')) {
       return 'Hello! How can I assist you today?';
     } else if (lowerCaseQuery.includes('price')) {

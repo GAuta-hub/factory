@@ -14,7 +14,7 @@ import { UserService } from '../service/user.service';
 @Component({
   selector: 'add-user-form',
   standalone: true,
-  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule, MatCardModule, MatSelectModule, NgFor],
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule, MatCardModule, MatSelectModule, ],
   templateUrl: './add-user-form.component.html',
   styleUrl: './add-user-form.component.scss'
 })
@@ -22,10 +22,10 @@ export class AddUserFormComponent implements OnInit {
 
 
   signUpForm!: FormGroup;
-  options = [
-    { value: 'Admin', label: 'Admin' },
-    { value: 'User', label: 'User' },
-  ];
+  // options = [
+  //   { value: 'Admin', label: 'Admin' },
+  //   { value: 'User', label: 'User' },
+  // ];
 
   constructor(private fb: FormBuilder, private user: UserService, private dialogRef: MatDialogRef<AddUserFormComponent>) {
     this.signUpForm = this.fb.group({

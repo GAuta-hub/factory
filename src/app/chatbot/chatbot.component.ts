@@ -33,36 +33,10 @@ export class ChatbotComponent {
       this.userInput = '';
     }
   }
-  
-  // userQuery: string = '';
-  // response: string = '';
-  //   onSubmit(): void {
-  //   this.response = this.chatBotService.getResponse(this.userQuery);
-  // }
 
 
+ 
 
-
-
-  // userInput: string = '';
-  // response: { sender: any, text: any }[] = [];
-
-  // sendMessage() {
-  //   if (this.userInput.trim()) {
-  //     this.response.push({ sender: 'user', text: this.userInput });
-  //     this.userInput = '';
-  //     this.chatBotService.getResponse(this.userInput);
-  //   }
-  // }
-
-  // getBotResponse() {
-  //   // Simulate a bot response (replace with API call)
-    
-  //   this.response.push = this.chatBotService.getResponse(this.userInput);
-    
-    // setTimeout(() => {
-    //   this.messages.push({ sender: 'bot', text: 'Thank you for your enquiry. We will get back to you shortly.' });
-    // }, 1000);
   }
 
   

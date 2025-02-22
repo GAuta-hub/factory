@@ -10,7 +10,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddUserFormComponent } from '../add-user-form/add-user-form.component';
 import { UserService } from '../service/user.service';
 
@@ -32,15 +32,23 @@ import { ChatbotComponent } from "../chatbot/chatbot.component";
 
 export class LoginComponent implements OnInit {
 
-  
-
   loginForm!: FormGroup;
   alertMessage: any;
   showModal = false; //show model is control flag that control the model is visible or not
 
+
   constructor(private fb: FormBuilder, private userService: UserService,
      private router: Router, 
-     private dialog: MatDialog,@Inject(DOCUMENT) private document: Document) {
+     private dialog: MatDialog,@Inject(DOCUMENT) private document: Document,) {
+
+      this.loginForm = this.fb.group({
+        user_name: ['', Validators.required],
+        password: ['', Validators.required],
+        reentter_password: ['', Validators.required],
+        address: ['', Validators.required],
+        phone_number: ['', Validators.required],
+        role: ['', Validators.required],
+      })
 
     const container = document.getElementById("container");
  const registerBtn = document.getElementById("register");
@@ -103,7 +111,16 @@ export class LoginComponent implements OnInit {
     this.userService.setUsername(this.loginForm.controls['username'].value!);
   }
 
- 
+  addUser(form: any) {
+    this.userService.addNewUser(this.loginForm.value).subscribe({
+      next: (data: any) => {
+        console.log(data),
+          console.log('Form Submitted:', form.value);
+      
+      }
+
+    })
+  }
   
   
 }
